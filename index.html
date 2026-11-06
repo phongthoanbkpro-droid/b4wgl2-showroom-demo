@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101a19">
+  <meta name="description" content="B4WGL2 – showroom WebGL2 tương tác với mô hình demo tự dựng, thử nghiệm trên desktop và mobile.">
+  <title>B4WGL2 · Showroom tương tác</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="B4WGL2 Showroom – trang chủ">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><path d="M9 29V11L21 5L33 11V29L21 35L9 29Z" stroke="currentColor" stroke-width="1.8"/><path d="M9 11L21 17L33 11M21 17V35" stroke="currentColor" stroke-width="1.8"/></svg></span>
+        <span class="brand-copy"><strong>B4WGL2</strong><small>INTERACTIVE SHOWROOM</small></span>
+      </a>
+      <div class="header-right"><span class="online-pill"><span class="dot"></span> LIVE 3D DEMO</span><button class="ghost-button" id="themeToggle" type="button" aria-label="Đổi giao diện sáng tối">☾ <span>Giao diện</span></button></div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="mainTitle">
+        <div><div class="eyebrow"><span class="eyebrow-line"></span> KHÔNG GIAN TRƯNG BÀY TƯƠNG TÁC</div><h1 id="mainTitle">Sản phẩm của bạn.<br><em>Một trải nghiệm mới.</em></h1><p>Khám phá, xoay 3D và thử màu trực tiếp trên mọi màn hình.</p></div>
+        <div class="intro-side"><span class="version-tag">PUBLIC PROTOTYPE / 01</span><small>WebGL2 · Desktop &amp; Mobile</small></div>
+      </section>
+
+      <div class="workspace">
+        <aside class="catalog" id="catalog" aria-label="Danh sách sản phẩm">
+          <div class="section-top"><span class="section-label">BỘ SƯU TẬP</span><span class="count" id="productCount">03</span></div>
+          <h2>Chọn sản phẩm</h2><p class="catalog-description">Ba mô hình 3D tự dựng để kiểm tra trải nghiệm showroom công khai.</p>
+          <div class="product-list" id="productList" role="group" aria-label="Chọn sản phẩm 3D"></div>
+          <div class="catalog-bottom"><span class="tiny-square"></span><p>Hệ thống chung, nội dung riêng.<br><strong>Một showroom – nhiều sản phẩm.</strong></p></div>
+        </aside>
+
+        <section class="detail" aria-label="Sản phẩm được chọn">
+          <div class="detail-top"><div><div class="bread"><span>COLLECTION</span><span class="slash">/</span><span id="breadcrumb">...</span></div><h2 id="productTitle">Đang chuẩn bị...</h2><p id="productSubtitle">Showroom 3D tương tác</p></div><button id="catalogOpen" class="mobile-menu" type="button" aria-controls="catalog" aria-expanded="false">☷ Danh sách</button></div>
+          <div class="viewer" id="viewer" aria-label="Khung hiển thị 3D">
+            <canvas id="glCanvas" aria-label="Mô hình WebGL2 có thể xoay bằng thao tác kéo, phóng to bằng cuộn hoặc chụm hai ngón" tabindex="0"></canvas>
+            <div class="grid-haze" aria-hidden="true"></div>
+            <div class="viewer-top"><span class="view-label"><span class="view-status"></span> REAL-TIME 3D</span><button id="resetView" class="viewer-button" type="button" aria-label="Đặt lại góc nhìn">↺ <span>Đặt lại</span></button></div>
+            <div id="viewerError" class="error-panel" role="alert" hidden><strong>Không thể khởi động WebGL2</strong><p>Hãy dùng Chrome, Safari hoặc Edge mới có hỗ trợ WebGL2 và tăng tốc đồ họa.</p></div>
+            <div class="viewer-bottom"><span id="canvasHint">↔ Kéo để xoay &nbsp; · &nbsp; Cuộn/chụm để phóng to</span><button id="fullscreen" class="viewer-button" type="button" aria-label="Mở toàn màn hình">⛶ <span>Toàn màn hình</span></button></div>
+          </div>
+          <div class="detail-meta"><div class="meta-copy"><span class="section-label">GIỚI THIỆU SẢN PHẨM</span><p id="productDescription">...</p><div class="specs" id="specs"></div></div><div class="finish-panel"><span class="section-label">TÙY CHỌN MÀU</span><div id="finishes" class="finishes" role="group" aria-label="Chọn màu sản phẩm"></div><span id="finishLabel" class="finish-name" role="status"></span></div></div>
+        </section>
+      </div>
+      <p class="disclaimer"><strong>Lưu ý:</strong> Đây là mẫu công khai với mô hình WebGL2 tự dựng, <strong>không chứa</strong> ba cảnh Blend4Web nội bộ cfchonmau3vn, MAUBOM, TH02. Chức năng đồ họa và giao diện là bản thử trải nghiệm, không phải chứng nhận khả năng engine hoặc thông số sản phẩm thương mại.</p>
+    </main>
+    <footer><span>© 2026 B4WGL2 · Showroom WebGL2 Public Preview</span><span>3D procedurally authored for this demo · No external runtime / assets</span></footer>
+  </div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
